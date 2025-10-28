@@ -119,12 +119,13 @@
     }
     <style id="rx-logo-overrides">
   /* Fuerza +50% en el header y +30% en el footer */
-  .brand img{
-    height: 120px !important;   /* AJUSTE: si lo quieres exacto a 108px, cambia aquí */
-    width: auto !important;
-    max-height: none !important;
-    filter: none !important;
-  }
+  /* Header logo — +50% */
+.brand img,
+.logo-img {
+  height: 108px !important;
+  width: auto !important;
+  filter: none !important;
+}
   .footer-logo img{
     height: 95px !important;    /* ~+30% respecto a 72px; ajusta si quieres */
     width: auto !important;
@@ -151,7 +152,7 @@
     <div class="container nav">
       <div class="brand">
         <!-- Solo logo, a color -->
-        <img src="assets/rexford-logo.png" alt="Rexford logo" />
+        <img src="assets/rexford-logo.png" alt="Rexford logo" class="logo-img" />
       </div>
       <nav aria-label="Principal">
         <ul>
