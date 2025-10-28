@@ -117,6 +117,32 @@
       form{grid-template-columns:1fr}
       h2{font-size:32px}
     }
+    <style id="rx-logo-overrides">
+  /* Fuerza +50% en el header y +30% en el footer */
+  .brand img{
+    height: 120px !important;   /* AJUSTE: si lo quieres exacto a 108px, cambia aquí */
+    width: auto !important;
+    max-height: none !important;
+    filter: none !important;
+  }
+  .footer-logo img{
+    height: 95px !important;    /* ~+30% respecto a 72px; ajusta si quieres */
+    width: auto !important;
+    max-height: none !important;
+    filter: none !important;
+  }
+  /* Opcional: reduce la altura de la barra si se ve muy alta con el logo nuevo */
+  .nav{ padding: 10px 0 !important; }
+  /* En móviles, evitamos que se vuelva demasiado grande */
+  @media (max-width: 980px){
+    .brand img{ height: 96px !important; }
+    .footer-logo img{ height: 84px !important; }
+  }
+  @media (max-width: 560px){
+    .brand img{ height: 72px !important; }
+    .footer-logo img{ height: 72px !important; }
+  }
+</style>
   </style>
 </head>
 <body>
