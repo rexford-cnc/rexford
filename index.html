@@ -1,149 +1,411 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rexford CNC & Robotics</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Rexford CNC & Robotics — The Smart Manufacturing Ecosystem Company</title>
+  <meta name="description" content="Soluciones CNC, robótica y automatización (Machine Tending). +30 años de experiencia en mecanizado de alto desempeño México / USA."/>
+  <link rel="icon" href="favicon.ico"/>
+  <style>
+    :root{
+      --rx-red:#d71920;
+      --rx-black:#111;
+      --rx-gray:#f5f5f7;
+      --rx-muted:#6b7280;
+      --radius:16px;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--rx-black);background:#fff}
+    a{color:var(--rx-red);text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+    .container{width:min(1200px,92%);margin:0 auto}
 
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        color: #222;
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:48px; /* logo +50% */
+               width:auto}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    nav a{color:#222;font-weight:600}
+    .actions{display:flex;align-items:center;gap:12px}
+    .lang{border:1px solid #e5e7eb;background:#fff;border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;font-weight:700}
+    .btn.primary{background:var(--rx-red);color:#fff;border-color:var(--rx-red)}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{position:relative;padding:72px 0;background:linear-gradient(135deg,#fff 0%,#fff 60%,#f9fafb 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+    .kicker{display:inline-flex;gap:10px;align-items:center;color:var(--rx-muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+    .kicker .dot{width:8px;height:8px;background:var(--rx-red);border-radius:999px}
+    h2{font-size:40px;line-height:1.08;margin:10px 0 10px}
+    .subtitle{font-size:18px;color:#374151;max-width:62ch}
+    .hero-actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{background:#fff;border:1px solid #eee;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .hero-media{border:1px solid #eee;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-media img{width:100%;height:100%;object-fit:cover}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .section-head h3{font-size:28px;margin:0}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:var(--rx-gray);padding:8px 12px;border-radius:999px;color:#374151;font-weight:700}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:#fff;border:1px solid #eee;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h4{margin:8px 0 6px}
+    .muted{color:var(--rx-muted)}
+
+    /* Brands */
+    .brands .brand-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr); /* 5 y 5 */
+      gap:28px 24px;
+      align-items:center;
+      justify-items:center;
+    }
+    .brand-box{
+      width:100%;
+      background:#fff;
+      border:1px solid #eee;
+      border-radius:14px;
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:120px;                 /* MISMO ALTO para todos */
+      box-shadow:var(--shadow);
+      transition:filter .2s,opacity .2s,transform .2s;
+      filter:grayscale(100%);
+      opacity:.95;
+    }
+    .brand-box:hover{filter:none;opacity:1;transform:translateY(-2px)}
+    .brand-box img{
+      max-height:72px;              /* logos más grandes y UNIFORMES */
+      width:auto;
+      object-fit:contain;
     }
 
-    header {
-        background: #fff;
-        padding: 15px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #eee;
-    }
+    /* Contact */
+    .contact{background:var(--rx-gray);border-top:1px solid #eee}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,select,textarea{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;font-size:16px}
+    textarea{min-height:120px;grid-column:1/-1}
+    .note{font-size:12px;color:var(--rx-muted)}
 
-    .rexford-logo-header {
-        width: 150px;  /* ✅ Ajustado */
-        height: auto;
-        filter: none!important;
-    }
+    /* Footer (más claro para que destaque tu logo) */
+    footer{background:#f0f1f3;color:#2b2f36}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:18px;padding:36px 0}
+    .footer-logo{display:flex;align-items:center;gap:12px}
+    .footer-logo img{height:56px;width:auto} /* logo abajo +50% */
+    .fine{border-top:1px solid #d7d9df;padding:14px 0;color:#666;font-size:14px}
 
-    nav ul {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      nav ul{display:none}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .grid-4{grid-template-columns:1fr 1fr}
+      .brands .brand-grid{grid-template-columns:repeat(3,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
-
-    nav a {
-        text-decoration: none;
-        color: black;
-        font-weight: 500;
+    @media (max-width:560px){
+      .grid-3,.grid-4{grid-template-columns:1fr}
+      .brands .brand-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+      h2{font-size:32px}
     }
-
-    .hero {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 30px;
-        padding: 80px 40px;
-        background: #fff;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-        line-height: 1.2;
-    }
-
-    .hero .dot {
-        color: red;
-        font-weight: bold;
-        margin-right: 5px;
-    }
-
-    .brand-section {
-        padding: 50px 40px;
-        text-align: center;
-    }
-
-    .brand-grid {
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
-        gap: 30px;
-        align-items: center;
-    }
-
-    .brand-grid img {
-        width: 130px;
-        height: auto;
-        margin: auto;
-    }
-
-    footer {
-        text-align: center;
-        padding: 50px 0;
-        background: #fff;
-        border-top: 1px solid #eee;
-    }
-
-    .footer-logo {
-        width: 260px; /* ✅ Ajustado */
-        height: auto;
-        margin-bottom: 15px;
-    }
-</style>
-
+  </style>
 </head>
 <body>
-
-<header>
-    <a href="#home">
-        <img src="assets/rexford-logo.png" class="rexford-logo-header" alt="Rexford CNC & Robotics">
-    </a>
-
-    <nav>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Solo logo, sin texto -->
+        <img src="assets/rexford-logo.png" alt="Rexford logo" />
+      </div>
+      <nav aria-label="Principal">
         <ul>
-            <li><a href="#solutions">Soluciones</a></li>
-            <li><a href="#brands">Marcas</a></li>
-            <li><a href="#financing">Financiamiento</a></li>
-            <li><a href="#contact">Contacto</a></li>
+          <li><a href="#soluciones" data-i18n="nav.soluciones">Soluciones</a></li>
+          <li><a href="#marcas" data-i18n="nav.marcas">Marcas</a></li>
+          <li><a href="#financiamiento" data-i18n="nav.financiamiento">Financiamiento</a></li>
+          <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
         </ul>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <div>
-        <p><span class="dot">•</span>THE SMART MANUFACTURING ECOSYSTEM COMPANY</p>
-        <h1>Soluciones CNC, Robótica y Automatización</h1>
-        <p>Integramos centros de maquinado, tornos CNC, celdas robotizadas y herramientas de corte con financiamiento, capacitación y soporte técnico.</p>
-        <p><strong>+30 años de experiencia en mecanizado de alto desempeño México / USA</strong><br>
-           Proyectos llave en mano FANUC / Mitsubishi con garantías Rexford.</p>
-        <br>
-        <button style="padding:10px 20px;background:red;color:#fff;border:none;border-radius:8px;cursor:pointer;">Ver soluciones</button>
-        <a href="#brands" style="margin-left:20px;color:red;font-weight:bold;">Marcas representadas</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="mailto:info@rexford.com.mx">info@rexford.com.mx</a>
+        <button id="langToggle" class="lang" aria-label="Cambiar idioma">EN</button>
+      </div>
     </div>
-    <img src="assets/ffg-machine.png" style="width:100%;max-width:430px;"> 
-</section>
+  </header>
 
-<section id="brands" class="brand-section">
-    <h2>Nuestras Marcas</h2>
-    <div class="brand-grid">
-        <img src="assets/ffg.png" alt="FFG">
-        <img src="assets/expand.png" alt="Expand">
-        <img src="assets/fanuc.png" alt="FANUC">
-        <img src="assets/mitsubishi.png" alt="Mitsubishi">
-        <img src="assets/ecoroll.png" alt="Ecoroll">
-        <img src="assets/kennametal.png" alt="Kennametal">
-        <img src="assets/hainbuch.png" alt="Hainbuch">
-        <img src="assets/calibratools.png" alt="Calibratools">
-        <img src="assets/allied.png" alt="Allied">
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker"><span class="dot"></span> <span data-i18n="hero.kicker">The Smart Manufacturing Ecosystem Company</span></div>
+        <h2 data-i18n="hero.title">Soluciones CNC, Robótica y Automatización (Machine Tending)</h2>
+        <p class="subtitle" data-i18n="hero.subtitle">Integramos centros de maquinado, tornos CNC, celdas robotizadas y herramientas de corte con financiamiento, capacitación y soporte técnico.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#soluciones" data-i18n="hero.btn1">Ver soluciones</a>
+          <a class="btn" href="#marcas" data-i18n="hero.btn2">Marcas representadas</a>
+        </div>
+        <div class="hero-card" style="margin-top:18px">
+          <strong data-i18n="hero.badge"><span class="plus">+30</span> años de experiencia en mecanizado de alto desempeño México / USA</strong><br/>
+          <span data-i18n="hero.line2">Proyectos llave en mano, integración FANUC / Mitsubishi y puesta en marcha con garantías Rexford.</span>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="Imagen principal">
+        <!-- Si tienes hero.jpg colócalo en /assets/ -->
+        <img src="assets/hero.jpg" alt="Celdas robotizadas y CNC en operación"/>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
-    <img src="assets/rexford-logo.png" class="footer-logo">
-    <p>© Rexford CNC & Robotics — The Smart Manufacturing Ecosystem Company</p>
-</footer>
+  <!-- Brands -->
+  <section class="brands" id="marcas">
+    <div class="container">
+      <div class="section-head">
+        <h3 data-i18n="brands.title">Nuestras Marcas</h3>
+        <span class="pill" data-i18n="brands.pill">Tecnología global • Soporte local</span>
+      </div>
 
+      <!-- 5 x 2, todos del mismo tamaño -->
+      <div class="brand-grid">
+        <a class="brand-box" href="https://ffg-americas.com" target="_blank" rel="noopener" title="FFG">
+          <img src="assets/ffg.png" alt="FFG"/>
+        </a>
+        <a class="brand-box" href="https://expandmachinery.com" target="_blank" rel="noopener" title="Expand Machinery">
+          <img src="assets/expand.png" alt="Expand Machinery"/>
+        </a>
+        <a class="brand-box" href="https://www.fanucamerica.com" target="_blank" rel="noopener" title="FANUC">
+          <img src="assets/fanuc.png" alt="FANUC"/>
+        </a>
+        <a class="brand-box" href="https://mx.mitsubishielectric.com/fa/es/products/rbt/industrial-robots/" target="_blank" rel="noopener" title="Mitsubishi Electric">
+          <img src="assets/mitsubishi.png" alt="Mitsubishi Electric"/>
+        </a>
+        <a class="brand-box" href="https://ecoroll.com" target="_blank" rel="noopener" title="ECOROLL">
+          <img src="assets/ecoroll.png" alt="ECOROLL"/>
+        </a>
+
+        <a class="brand-box" href="https://kennametal.com" target="_blank" rel="noopener" title="Kennametal">
+          <img src="assets/kennametal.png" alt="Kennametal"/>
+        </a>
+        <a class="brand-box" href="https://hainbuch.mx" target="_blank" rel="noopener" title="Hainbuch">
+          <img src="assets/hainbuch.png" alt="Hainbuch"/>
+        </a>
+        <a class="brand-box" href="https://calibratools.com.mx" target="_blank" rel="noopener" title="Calibratools">
+          <img src="assets/calibratools.png" alt="Calibratools"/>
+        </a>
+        <a class="brand-box" href="https://alliedmachine.com" target="_blank" rel="noopener" title="Allied Machine & Engineering">
+          <img src="assets/allied.png" alt="Allied Machine & Engineering"/>
+        </a>
+        <a class="brand-box" href="https://rexford.com.mx" target="_blank" rel="noopener" title="Rexford Carbide">
+          <img src="assets/rexfordcarbide.png" alt="Rexford Carbide"/>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones -->
+  <section id="soluciones">
+    <div class="container">
+      <div class="section-head">
+        <h3 data-i18n="solutions.title">Soluciones</h3>
+        <span class="pill" data-i18n="solutions.pill">Integración de punta a punta</span>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <h4 data-i18n="solutions.cnc.title">Maquinaria CNC</h4>
+          <p class="muted" data-i18n="solutions.cnc.text">Centros de maquinado, tornos CNC, horizontales y más para producción continua (FFG & Expand Machinery).</p>
+          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
+        </div>
+        <div class="card">
+          <h4 data-i18n="solutions.robot.title">Robótica & Automatización</h4>
+          <p class="muted" data-i18n="solutions.robot.text">Tenders, paletizado, visión artificial, seguridad y PLC.</p>
+          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
+        </div>
+        <div class="card">
+          <h4 data-i18n="solutions.tools.title">Herramientas & Accesorios</h4>
+          <p class="muted" data-i18n="solutions.tools.text">Herramientas de corte, Bruñido (Burnishing), Chucks & Boquillas, Calibradores de rosca.</p>
+          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
+        </div>
+        <div class="card">
+          <h4 data-i18n="solutions.turnkey.title">Llave en Mano</h4>
+          <p class="muted" data-i18n="solutions.turnkey.text">Líneas completas con ingeniería, instalación, puesta en marcha y capacitación.</p>
+          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financiamiento -->
+  <section id="financiamiento">
+    <div class="container">
+      <div class="section-head">
+        <h3 data-i18n="finance.title">Financiamiento inteligente Rexford</h3>
+        <span class="pill" data-i18n="finance.pill">Haz posible tu próxima máquina</span>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h4 data-i18n="finance.a">Crédito y arrendamiento</h4><p class="muted" data-i18n="finance.a.txt">Esquemas flexibles para anticipos de maquinaria CNC, robots y accesorios.</p></div>
+        <div class="card"><h4 data-i18n="finance.b">Capital de trabajo</h4><p class="muted" data-i18n="finance.b.txt">Líneas para consumibles, herramientas de corte y metrología.</p></div>
+        <div class="card"><h4 data-i18n="finance.c">Acompañamiento bancario</h4><p class="muted" data-i18n="finance.c.txt">Soporte documental y técnico para agilizar la aprobación.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <h3 data-i18n="contact.title">Contacto</h3>
+        <span class="pill" data-i18n="contact.pill">Hablemos de tu proyecto</span>
+      </div>
+      <div class="card" style="padding:22px">
+        <form name="contacto" method="post" action="mailto:info@rexford.com.mx" enctype="text/plain">
+          <input type="text" name="nombre" placeholder="Nombre y empresa / Name & Company" required/>
+          <input type="email" name="email" placeholder="Correo / Email" required/>
+          <input type="tel" name="telefono" placeholder="Teléfono / Phone"/>
+          <select name="interes">
+            <option>Maquinaria CNC / CNC Machinery</option>
+            <option>Robótica & Automatización</option>
+            <option>Herramientas & Accesorios</option>
+            <option>Financiamiento</option>
+          </select>
+          <textarea name="mensaje" placeholder="Cuéntanos sobre tu necesidad / Tell us about your project"></textarea>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn primary" type="submit" data-i18n="contact.send">Enviar</button>
+            <a class="btn" href="https://www.rexford.com.mx" target="_blank" rel="noopener">www.rexford.com.mx</a>
+            <span class="note" data-i18n="contact.note">También puedes escribirnos a <a href="mailto:info@rexford.com.mx">info@rexford.com.mx</a></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/rexford-logo.png" alt="Rexford logo"/>
+          <div>
+            <strong>Rexford CNC & Robotics</strong><br/>
+            <span data-i18n="footer.tag">The Smart Manufacturing Ecosystem Company</span>
+          </div>
+        </div>
+        <p style="margin-top:12px;color:#475266" data-i18n="footer.desc">
+          Integramos CNC, robótica y automatización con financiamiento, capacitación y soporte técnico en todo México.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-top:0">Navegación</h4>
+        <p><a href="#soluciones" data-i18n="nav.soluciones">Soluciones</a></p>
+        <p><a href="#marcas" data-i18n="nav.marcas">Marcas</a></p>
+        <p><a href="#financiamiento" data-i18n="nav.financiamiento">Financiamiento</a></p>
+      </div>
+      <div>
+        <h4 style="margin-top:0" data-i18n="footer.contact">Contacto</h4>
+        <p><a href="mailto:info@rexford.com.mx">info@rexford.com.mx</a></p>
+        <p>www.rexford.com.mx</p>
+      </div>
+      <div>
+        <h4 style="margin-top:0" data-i18n="footer.phones">Teléfonos</h4>
+        <p>Monterrey: +52 81 2436 5961</p>
+        <p>Chihuahua: +52 614 277 6628</p>
+        <p>Guadalajara: +52 33 3184 7475</p>
+      </div>
+    </div>
+    <div class="fine">
+      <div class="container">© 2025 Rexford CNC & Robotics. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    // IDS de texto ES/EN
+    const i18n = {
+      es: {
+        "nav.soluciones":"Soluciones","nav.marcas":"Marcas","nav.financiamiento":"Financiamiento","nav.contacto":"Contacto",
+        "hero.kicker":"The Smart Manufacturing Ecosystem Company",
+        "hero.title":"Soluciones CNC, Robótica y Automatización (Machine Tending)",
+        "hero.subtitle":"Integramos centros de maquinado, tornos CNC, celdas robotizadas y herramientas de corte con financiamiento, capacitación y soporte técnico.",
+        "hero.btn1":"Ver soluciones","hero.btn2":"Marcas representadas",
+        "hero.badge":"+30 años de experiencia en mecanizado de alto desempeño México / USA",
+        "hero.line2":"Proyectos llave en mano, integración FANUC / Mitsubishi y puesta en marcha con garantías Rexford.",
+        "brands.title":"Nuestras Marcas","brands.pill":"Tecnología global • Soporte local",
+        "solutions.title":"Soluciones","solutions.pill":"Integración de punta a punta",
+        "solutions.cnc.title":"Maquinaria CNC",
+        "solutions.cnc.text":"Centros de maquinado, tornos CNC, horizontales y más para producción continua (FFG & Expand Machinery).",
+        "solutions.robot.title":"Robótica & Automatización",
+        "solutions.robot.text":"Tenders, paletizado, visión artificial, seguridad y PLC.",
+        "solutions.tools.title":"Herramientas & Accesorios",
+        "solutions.tools.text":"Herramientas de corte, Bruñido (Burnishing), Chucks & Boquillas, Calibradores de rosca.",
+        "solutions.turnkey.title":"Llave en Mano",
+        "solutions.turnkey.text":"Líneas completas con ingeniería, instalación, puesta en marcha y capacitación.",
+        "solutions.learn":"Conocer más",
+        "finance.title":"Financiamiento inteligente Rexford","finance.pill":"Haz posible tu próxima máquina",
+        "finance.a":"Crédito y arrendamiento","finance.a.txt":"Esquemas flexibles para anticipos de maquinaria CNC, robots y accesorios.",
+        "finance.b":"Capital de trabajo","finance.b.txt":"Líneas para consumibles, herramientas de corte y metrología.",
+        "finance.c":"Acompañamiento bancario","finance.c.txt":"Soporte documental y técnico para agilizar la aprobación.",
+        "contact.title":"Contacto","contact.pill":"Hablemos de tu proyecto","contact.send":"Enviar",
+        "contact.note":"También puedes escribirnos a <a href='mailto:info@rexford.com.mx'>info@rexford.com.mx</a>",
+        "footer.tag":"The Smart Manufacturing Ecosystem Company",
+        "footer.desc":"Integramos CNC, robótica y automatización con financiamiento, capacitación y soporte técnico en todo México.",
+        "footer.contact":"Contacto","footer.phones":"Teléfonos"
+      },
+      en: {
+        "nav.soluciones":"Solutions","nav.marcas":"Brands","nav.financiamiento":"Financing","nav.contacto":"Contact",
+        "hero.kicker":"The Smart Manufacturing Ecosystem Company",
+        "hero.title":"CNC, Robotics & Automation (Machine Tending) Solutions",
+        "hero.subtitle":"We integrate machining centers, CNC lathes, robotic cells and cutting tools with financing, training and technical support.",
+        "hero.btn1":"See solutions","hero.btn2":"Our brands",
+        "hero.badge":"+30 years of high-performance machining experience Mexico / USA",
+        "hero.line2":"Turnkey projects, FANUC / Mitsubishi integration and start-up with Rexford warranties.",
+        "brands.title":"Our Brands","brands.pill":"Global tech • Local support",
+        "solutions.title":"Solutions","solutions.pill":"End-to-end integration",
+        "solutions.cnc.title":"CNC Machinery",
+        "solutions.cnc.text":"Vertical, turning and horizontal platforms for continuous production (FFG & Expand Machinery).",
+        "solutions.robot.title":"Robotics & Automation",
+        "solutions.robot.text":"Tenders, palletizing, machine vision, safety and PLC.",
+        "solutions.tools.title":"Tooling & Accessories",
+        "solutions.tools.text":"Cutting tools, Burnishing, Chucks & Collets, Thread gages.",
+        "solutions.turnkey.title":"Turnkey",
+        "solutions.turnkey.text":"Complete lines with engineering, installation, start-up and training.",
+        "solutions.learn":"Learn more",
+        "finance.title":"Smart financing by Rexford","finance.pill":"Make your next machine possible",
+        "finance.a":"Loans & leases","finance.a.txt":"Flexible schemes for CNC machinery down payments, robots and accessories.",
+        "finance.b":"Working capital","finance.b.txt":"Lines for consumables, cutting tools and metrology.",
+        "finance.c":"Banking support","finance.c.txt":"Documentation and technical support to speed up approvals.",
+        "contact.title":"Contact","contact.pill":"Tell us about your project","contact.send":"Send",
+        "contact.note":"You can also email us at <a href='mailto:info@rexford.com.mx'>info@rexford.com.mx</a>",
+        "footer.tag":"The Smart Manufacturing Ecosystem Company",
+        "footer.desc":"We integrate CNC, robotics and automation with financing, training and technical support across Mexico.",
+        "footer.contact":"Contact","footer.phones":"Phones"
+      }
+    };
+
+    const langBtn = document.getElementById('langToggle');
+    let current = 'es';
+
+    function applyLang(code){
+      const dict = i18n[code];
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]!==undefined){ el.innerHTML = dict[key]; }
+      });
+      document.documentElement.lang = (code==='es'?'es-MX':'en');
+      langBtn.textContent = (code==='es'?'EN':'ES');
+      current = code;
+    }
+    langBtn.addEventListener('click',()=>{
+      applyLang(current==='es'?'en':'es');
+    });
+    // inicia en ES
+    applyLang('es');
+  </script>
 </body>
 </html>
