@@ -102,24 +102,19 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/rexford-logo.png" alt="Rexford logo" onerror="this.style.opacity=.2">
-      </div>
-      <nav aria-label="Principal">
-        <ul>
-          <li><a href="#soluciones" data-i18n="nav.solutions">Soluciones</a></li>
-          <li><a href="#marcas" data-i18n="nav.brands">Marcas</a></li>
-          <li><a href="#financiamiento" data-i18n="nav.finance">Financiamiento</a></li>
-          <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="right">
-        <a class="btn slim" href="mailto:info@rexford.com.mx">info@rexford.com.mx</a>
-        <button id="langBtn" class="lang" aria-label="Cambiar idioma">EN</button>
-      </div>
-    </div>
-  </header>
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      <img src="assets/rexford-logo.png" alt="Rexford Logo" class="logo-img">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#solutions">Soluciones</a></li>
+      <li><a href="#brands">Marcas</a></li>
+      <li><a href="#financing">Financiamiento</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Hero -->
   <section class="hero">
@@ -237,44 +232,25 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-logo">
-          <img src="assets/rexford-logo.png" alt="Rexford" onerror="this.style.opacity=.2">
-          <div>
-            <strong>Rexford CNC & Robotics</strong><br/>
-            <span data-i18n="hero.kicker">The Smart Manufacturing Ecosystem Company</span>
-          </div>
-        </div>
-        <p style="margin-top:10px;color:#4b5563" data-i18n="footer.desc">
-          Integramos CNC, robótica y automatización con financiamiento, capacitación y soporte técnico.
-        </p>
-      </div>
-      <div>
-        <h4 style="margin-top:0">Navegación</h4>
-        <p><a href="#soluciones" data-i18n="nav.solutions">Soluciones</a></p>
-        <p><a href="#marcas" data-i18n="nav.brands">Marcas</a></p>
-        <p><a href="#financiamiento" data-i18n="nav.finance">Financiamiento</a></p>
-      </div>
-      <div>
-        <h4 style="margin-top:0" data-i18n="footer.phones">Teléfonos</h4>
-        <p>Monterrey: +52 81 2436 5961</p>
-        <p>Chihuahua: +52 614 277 6628</p>
-        <p>Guadalajara: +52 33 3184 7475</p>
-      </div>
-      <div>
-        <h4 style="margin-top:0">Links</h4>
-        <p><a href="#contacto" data-i18n="cta.contact">Cotizar</a></p>
-        <p><a href="#marcas" data-i18n="hero.btn2">Marcas representadas</a></p>
-        <p><a href="#soluciones" data-i18n="hero.btn1">Ver soluciones</a></p>
-        <p><a href="mailto:info@rexford.com.mx">info@rexford.com.mx</a></p>
-      </div>
+  <footer style="background-color: #f6f6f6; padding: 40px;">
+
+  <div style="display:flex; align-items:center; gap:20px;">
+    <img src="assets/rexford-logo.png" alt="Rexford Logo" class="footer-logo">
+    
+    <div>
+      <strong style="font-size:14px;">The Smart Manufacturing Ecosystem Company</strong>
     </div>
-    <div class="fine">
-      <div class="container">© 2025 Rexford CNC & Robotics. Todos los derechos reservados.</div>
-    </div>
-  </footer>
+  </div>
+
+  <div class="footer-info" style="margin-top:15px; font-size:14px;">
+    Integramos CNC, robótica y automatización con financiamiento, capacitación y soporte técnico.
+  </div>
+
+  <div class="footer-copy" style="margin-top:25px; font-size:12px; opacity:0.6;">
+    © 2025 Rexford CNC & Robotics. Todos los derechos reservados.
+  </div>
+
+</footer>
 
   <!-- WhatsApp -->
   <div class="wa">
