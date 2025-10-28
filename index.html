@@ -122,12 +122,12 @@
   /* Header logo — +50% */
 .brand img,
 .logo-img {
-  height: 108px !important;
+  height: 140px !important;
   width: auto !important;
   filter: none !important;
 }
   .footer-logo img{
-    height: 95px !important;    /* ~+30% respecto a 72px; ajusta si quieres */
+    height: 105px !important;    /* ~+30% respecto a 72px; ajusta si quieres */
     width: auto !important;
     max-height: none !important;
     filter: none !important;
@@ -152,7 +152,7 @@
     <div class="container nav">
       <div class="brand">
         <!-- Solo logo, a color -->
-        <img src="assets/rexford-logo.png" alt="Rexford logo" class="logo-img" />
+        <img src="assets/rexford-logo.png" alt="Rexford logo" style="height:108px;width:auto" />
       </div>
       <nav aria-label="Principal">
         <ul>
@@ -316,12 +316,12 @@
     <div class="container footer-grid">
       <div>
         <div class="footer-logo">
-          <img src="assets/rexford-logo.png" alt="Rexford logo"/>
-          <!-- Solo slogan a la derecha del logo -->
-          <div>
-            <span data-i18n="footer.tag"><strong>The Smart Manufacturing Ecosystem Company</strong></span>
-          </div>
-        </div>
+          <div class="footer-logo">
+  <img src="assets/rexford-logo.png" alt="Rexford logo" style="height:94px;width:auto"/>
+  <div>
+    <span>The Smart Manufacturing Ecosystem Company</span>
+  </div>
+</div>
         <p style="margin-top:12px;color:#475266" data-i18n="footer.desc">
           Integramos CNC, robótica y automatización con financiamiento, capacitación y soporte técnico en todo México.
         </p>
