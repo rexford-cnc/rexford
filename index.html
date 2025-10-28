@@ -23,10 +23,9 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    /* ✅ Logo header +20% vs marcas (72px → 86px) y a color */
-    .brand img{height:86px;width:auto;filter:none!important}
+    .brand img{height:96px;width:auto;filter:none!important} /* ← DOBLE */
     nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
     nav a{color:#222;font-weight:600}
     .actions{display:flex;align-items:center;gap:12px}
@@ -61,7 +60,7 @@
     /* Brands */
     .brands .brand-grid{
       display:grid;
-      grid-template-columns:repeat(5,1fr); /* 5 y 5 */
+      grid-template-columns:repeat(5,1fr);
       gap:28px 24px;
       align-items:center;
       justify-items:center;
@@ -75,7 +74,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      height:120px;                 /* MISMO ALTO para todos */
+      height:120px;
       box-shadow:var(--shadow);
       transition:filter .2s,opacity .2s,transform .2s;
       filter:grayscale(100%);
@@ -83,7 +82,7 @@
     }
     .brand-box:hover{filter:none;opacity:1;transform:translateY(-2px)}
     .brand-box img{
-      max-height:72px;              /* logos marcas uniformes */
+      max-height:72px;
       width:auto;
       object-fit:contain;
     }
@@ -95,12 +94,11 @@
     textarea{min-height:120px;grid-column:1/-1}
     .note{font-size:12px;color:var(--rx-muted)}
 
-    /* Footer (claro para que destaque tu logo) */
+    /* Footer */
     footer{background:#f0f1f3;color:#2b2f36}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:18px;padding:36px 0}
     .footer-logo{display:flex;align-items:center;gap:12px}
-    /* ✅ Logo footer +20% (86px) y a color */
-    .footer-logo img{height:86px;width:auto;filter:none!important}
+    .footer-logo img{height:112px;width:auto;filter:none!important} /* ← DOBLE */
     .fine{border-top:1px solid #d7d9df;padding:14px 0;color:#666;font-size:14px}
 
     /* Responsive */
@@ -111,6 +109,8 @@
       .grid-4{grid-template-columns:1fr 1fr}
       .brands .brand-grid{grid-template-columns:repeat(3,1fr)}
       .footer-grid{grid-template-columns:1fr 1fr}
+      .brand img{height:72px}
+      .footer-logo img{height:84px}
     }
     @media (max-width:560px){
       .grid-3,.grid-4{grid-template-columns:1fr}
@@ -118,6 +118,8 @@
       .footer-grid{grid-template-columns:1fr}
       form{grid-template-columns:1fr}
       h2{font-size:32px}
+      .brand img{height:64px}
+      .footer-logo img{height:72px}
     }
   </style>
 </head>
@@ -126,8 +128,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <!-- Solo logo, sin texto -->
-        <img src="assets/rexford-logo.png" alt="Rexford logo"/>
+        <img src="assets/rexford-logo.png" alt="Rexford logo" />
       </div>
       <nav aria-label="Principal">
         <ul>
@@ -174,39 +175,17 @@
         <span class="pill" data-i18n="brands.pill">Tecnología global • Soporte local</span>
       </div>
 
-      <!-- 5 x 2, todos del mismo tamaño -->
       <div class="brand-grid">
-        <a class="brand-box" href="https://ffg-americas.com" target="_blank" rel="noopener" title="FFG">
-          <img src="assets/ffg.png" alt="FFG"/>
-        </a>
-        <a class="brand-box" href="https://expandmachinery.com" target="_blank" rel="noopener" title="Expand Machinery">
-          <img src="assets/expand.png" alt="Expand Machinery"/>
-        </a>
-        <a class="brand-box" href="https://www.fanucamerica.com" target="_blank" rel="noopener" title="FANUC">
-          <img src="assets/fanuc.png" alt="FANUC"/>
-        </a>
-        <a class="brand-box" href="https://mx.mitsubishielectric.com/fa/es/products/rbt/industrial-robots/" target="_blank" rel="noopener" title="Mitsubishi Electric">
-          <img src="assets/mitsubishi.png" alt="Mitsubishi Electric"/>
-        </a>
-        <a class="brand-box" href="https://ecoroll.com" target="_blank" rel="noopener" title="ECOROLL">
-          <img src="assets/ecoroll.png" alt="ECOROLL"/>
-        </a>
-
-        <a class="brand-box" href="https://kennametal.com" target="_blank" rel="noopener" title="Kennametal">
-          <img src="assets/kennametal.png" alt="Kennametal"/>
-        </a>
-        <a class="brand-box" href="https://hainbuch.mx" target="_blank" rel="noopener" title="Hainbuch">
-          <img src="assets/hainbuch.png" alt="Hainbuch"/>
-        </a>
-        <a class="brand-box" href="https://calibratools.com.mx" target="_blank" rel="noopener" title="Calibratools">
-          <img src="assets/calibratools.png" alt="Calibratools"/>
-        </a>
-        <a class="brand-box" href="https://alliedmachine.com" target="_blank" rel="noopener" title="Allied Machine & Engineering">
-          <img src="assets/allied.png" alt="Allied Machine & Engineering"/>
-        </a>
-        <a class="brand-box" href="https://rexford.com.mx" target="_blank" rel="noopener" title="Rexford Carbide">
-          <img src="assets/rexfordcarbide.png" alt="Rexford Carbide"/>
-        </a>
+        <a class="brand-box" href="https://ffg-americas.com" target="_blank" rel="noopener" title="FFG"><img src="assets/ffg.png" alt="FFG"/></a>
+        <a class="brand-box" href="https://expandmachinery.com" target="_blank" rel="noopener" title="Expand Machinery"><img src="assets/expand.png" alt="Expand Machinery"/></a>
+        <a class="brand-box" href="https://www.fanucamerica.com" target="_blank" rel="noopener" title="FANUC"><img src="assets/fanuc.png" alt="FANUC"/></a>
+        <a class="brand-box" href="https://mx.mitsubishielectric.com/fa/es/products/rbt/industrial-robots/" target="_blank" rel="noopener" title="Mitsubishi Electric"><img src="assets/mitsubishi.png" alt="Mitsubishi Electric"/></a>
+        <a class="brand-box" href="https://ecoroll.com" target="_blank" rel="noopener" title="ECOROLL"><img src="assets/ecoroll.png" alt="ECOROLL"/></a>
+        <a class="brand-box" href="https://kennametal.com" target="_blank" rel="noopener" title="Kennametal"><img src="assets/kennametal.png" alt="Kennametal"/></a>
+        <a class="brand-box" href="https://hainbuch.mx" target="_blank" rel="noopener" title="Hainbuch"><img src="assets/hainbuch.png" alt="Hainbuch"/></a>
+        <a class="brand-box" href="https://calibratools.com.mx" target="_blank" rel="noopener" title="Calibratools"><img src="assets/calibratools.png" alt="Calibratools"/></a>
+        <a class="brand-box" href="https://alliedmachine.com" target="_blank" rel="noopener" title="Allied Machine & Engineering"><img src="assets/allied.png" alt="Allied Machine & Engineering"/></a>
+        <a class="brand-box" href="https://rexford.com.mx" target="_blank" rel="noopener" title="Rexford Carbide"><img src="assets/rexfordcarbide.png" alt="Rexford Carbide"/></a>
       </div>
     </div>
   </section>
@@ -219,26 +198,10 @@
         <span class="pill" data-i18n="solutions.pill">Integración de punta a punta</span>
       </div>
       <div class="grid-4">
-        <div class="card">
-          <h4 data-i18n="solutions.cnc.title">Maquinaria CNC</h4>
-          <p class="muted" data-i18n="solutions.cnc.text">Centros de maquinado, tornos CNC, horizontales y más para producción continua (FFG & Expand Machinery).</p>
-          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
-        </div>
-        <div class="card">
-          <h4 data-i18n="solutions.robot.title">Robótica & Automatización</h4>
-          <p class="muted" data-i18n="solutions.robot.text">Tenders, paletizado, visión artificial, seguridad y PLC.</p>
-          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
-        </div>
-        <div class="card">
-          <h4 data-i18n="solutions.tools.title">Herramientas & Accesorios</h4>
-          <p class="muted" data-i18n="solutions.tools.text">Herramientas de corte, Bruñido (Burnishing), Chucks & Boquillas, Calibradores de rosca.</p>
-          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
-        </div>
-        <div class="card">
-          <h4 data-i18n="solutions.turnkey.title">Llave en Mano</h4>
-          <p class="muted" data-i18n="solutions.turnkey.text">Líneas completas con ingeniería, instalación, puesta en marcha y capacitación.</p>
-          <a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a>
-        </div>
+        <div class="card"><h4 data-i18n="solutions.cnc.title">Maquinaria CNC</h4><p class="muted" data-i18n="solutions.cnc.text">Centros de maquinado, tornos CNC, horizontales y más para producción continua (FFG & Expand Machinery).</p><a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a></div>
+        <div class="card"><h4 data-i18n="solutions.robot.title">Robótica & Automatización</h4><p class="muted" data-i18n="solutions.robot.text">Tenders, paletizado, visión artificial, seguridad y PLC.</p><a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a></div>
+        <div class="card"><h4 data-i18n="solutions.tools.title">Herramientas & Accesorios</h4><p class="muted" data-i18n="solutions.tools.text">Herramientas de corte, Bruñido (Burnishing), Chucks & Boquillas, Calibradores de rosca.</p><a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a></div>
+        <div class="card"><h4 data-i18n="solutions.turnkey.title">Llave en Mano</h4><p class="muted" data-i18n="solutions.turnkey.text">Líneas completas con ingeniería, instalación, puesta en marcha y capacitación.</p><a class="btn" href="#contacto" data-i18n="solutions.learn">Conocer más</a></div>
       </div>
     </div>
   </section>
@@ -326,7 +289,6 @@
   </footer>
 
   <script>
-    // IDS de texto ES/EN
     const i18n = {
       es: {
         "nav.soluciones":"Soluciones","nav.marcas":"Marcas","nav.financiamiento":"Financiamiento","nav.contacto":"Contacto",
@@ -390,7 +352,6 @@
 
     const langBtn = document.getElementById('langToggle');
     let current = 'es';
-
     function applyLang(code){
       const dict = i18n[code];
       document.querySelectorAll('[data-i18n]').forEach(el=>{
@@ -401,10 +362,7 @@
       langBtn.textContent = (code==='es'?'EN':'ES');
       current = code;
     }
-    langBtn.addEventListener('click',()=>{
-      applyLang(current==='es'?'en':'es');
-    });
-    // inicia en ES
+    langBtn.addEventListener('click',()=>applyLang(current==='es'?'en':'es'));
     applyLang('es');
   </script>
 </body>
