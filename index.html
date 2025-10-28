@@ -4,188 +4,145 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rexford CNC & Robotics</title>
-<link rel="icon" type="image/png" href="favicon.ico">
+
 <style>
-    /* === GENERAL === */
-    body {margin: 0; font-family: Arial, sans-serif; color: #222;}
-    img {max-width: 100%; display: block;}
-
-    a {text-decoration: none; color: inherit;}
-    ul {list-style: none; padding: 0; margin: 0;}
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #222;
     }
 
-    /* === HEADER === */
     header {
-      width: 100%;
-      padding: 18px 0;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav.navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
+        background: #fff;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
     }
 
     .rexford-logo-header {
-      width: 220px;
-      height: auto;
-      filter: none !important; /* fuerza color */
+        width: 150px;  /* ✅ Ajustado */
+        height: auto;
+        filter: none!important;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 18px;
+    nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
-    .nav-links a:hover {
-      color: #e30613;
-      font-weight: bold;
+    nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
     }
 
-    /* === HERO SECTION === */
     .hero {
-      padding: 120px 0;
-      background: #fafafa;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 30px;
+        padding: 80px 40px;
+        background: #fff;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-      gap: 40px;
+    .hero h1 {
+        font-size: 42px;
+        line-height: 1.2;
     }
 
-    .dot {color: #e30613; font-weight: bold;}
-    .hero h1 {font-size: 48px; font-weight: bold; margin-bottom: 18px;}
-    .subtitle {font-size: 20px; opacity: 0.8;}
-
-    .btn-red {
-      background: #e30613;
-      color: #fff;
-      padding: 12px 26px;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: bold;
-      margin-right: 20px;
-      display: inline-block;
+    .hero .dot {
+        color: red;
+        font-weight: bold;
+        margin-right: 5px;
     }
 
-    .btn-red:hover {opacity: .85;}
-
-    /* === MARCAS === */
-    .brands {
-      padding: 100px 0;
-      text-align: center;
+    .brand-section {
+        padding: 50px 40px;
+        text-align: center;
     }
 
     .brand-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 30px;
-      margin-top: 40px;
-      align-items: center;
-      justify-items: center;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 30px;
+        align-items: center;
+    }
+
+    .brand-grid img {
+        width: 130px;
+        height: auto;
+        margin: auto;
+    }
+
+    footer {
+        text-align: center;
+        padding: 50px 0;
+        background: #fff;
+        border-top: 1px solid #eee;
     }
 
     .footer-logo {
-      width: 200px;
-      height: auto;
-      margin: auto;
-      display: block;
-    }
-
-    /* === FOOTER === */
-    footer {
-      text-align: center;
-      padding: 60px 0;
-      margin-top: 80px;
-      background: #111;
-      color: #fff;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 992px){
-      .hero-grid {grid-template-columns: 1fr;}
-      .brand-grid {grid-template-columns: repeat(2,1fr);}
-    }
-
-    @media (max-width: 560px){
-      .hero h1 {font-size: 32px;}
-      .nav-links {gap: 18px; font-size: 16px;}
+        width: 260px; /* ✅ Ajustado */
+        height: auto;
+        margin-bottom: 15px;
     }
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- HEADER -->
-<header class="container">
-  <nav class="navbar">
+<header>
     <a href="#home">
-      <img src="assets/rexford-logo.png" alt="Rexford Logo" class="rexford-logo-header">
+        <img src="assets/rexford-logo.png" class="rexford-logo-header" alt="Rexford CNC & Robotics">
     </a>
 
-    <ul class="nav-links">
-      <li><a href="#solutions">Soluciones</a></li>
-      <li><a href="#brands">Marcas</a></li>
-      <li><a href="#financing">Financiamiento</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+            <li><a href="#solutions">Soluciones</a></li>
+            <li><a href="#brands">Marcas</a></li>
+            <li><a href="#financing">Financiamiento</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <div class="container hero-grid">
     <div>
-      <div class="dot"></div>
-      <h1>Soluciones CNC, Robótica y Automatización</h1>
-      <p class="subtitle">
-        Integración FANUC / Mitsubishi · Proyectos llave en mano · Soporte técnico
-      </p>
-      <a class="btn-red" href="#solutions">Ver soluciones</a>
-      <a href="#brands">Marcas representadas</a>
+        <p><span class="dot">•</span>THE SMART MANUFACTURING ECOSYSTEM COMPANY</p>
+        <h1>Soluciones CNC, Robótica y Automatización</h1>
+        <p>Integramos centros de maquinado, tornos CNC, celdas robotizadas y herramientas de corte con financiamiento, capacitación y soporte técnico.</p>
+        <p><strong>+30 años de experiencia en mecanizado de alto desempeño México / USA</strong><br>
+           Proyectos llave en mano FANUC / Mitsubishi con garantías Rexford.</p>
+        <br>
+        <button style="padding:10px 20px;background:red;color:#fff;border:none;border-radius:8px;cursor:pointer;">Ver soluciones</button>
+        <a href="#brands" style="margin-left:20px;color:red;font-weight:bold;">Marcas representadas</a>
     </div>
-    <div>
-      <img src="assets/feeler.png" alt="Demo Machine">
-    </div>
-  </div>
+    <img src="assets/ffg-machine.png" style="width:100%;max-width:430px;"> 
 </section>
 
-<!-- MARCAS -->
-<section class="brands" id="brands">
-  <h2>Nuestras Marcas</h2>
-  <div class="brand-grid container">
-    <img src="assets/ffg.png" alt="FFG">
-    <img src="assets/expand.png" alt="Expand">
-    <img src="assets/fanuc.png" alt="Fanuc">
-    <img src="assets/mitsubishi.png" alt="Mitsubishi">
-    <img src="assets/ecoroll.png" alt="Ecoroll">
-    <img src="assets/kennametal.png" alt="Kennametal">
-    <img src="assets/hainbuch.png" alt="Hainbuch">
-    <img src="assets/calibratools.png" alt="Calibratools">
-  </div>
+<section id="brands" class="brand-section">
+    <h2>Nuestras Marcas</h2>
+    <div class="brand-grid">
+        <img src="assets/ffg.png" alt="FFG">
+        <img src="assets/expand.png" alt="Expand">
+        <img src="assets/fanuc.png" alt="FANUC">
+        <img src="assets/mitsubishi.png" alt="Mitsubishi">
+        <img src="assets/ecoroll.png" alt="Ecoroll">
+        <img src="assets/kennametal.png" alt="Kennametal">
+        <img src="assets/hainbuch.png" alt="Hainbuch">
+        <img src="assets/calibratools.png" alt="Calibratools">
+        <img src="assets/allied.png" alt="Allied">
+    </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <img src="assets/rexford-logo.png" alt="Rexford Logo" class="footer-logo">
-  <p>© 2025 Rexford CNC & Robotics – The Smart Manufacturing Ecosystem Company</p>
+    <img src="assets/rexford-logo.png" class="footer-logo">
+    <p>© Rexford CNC & Robotics — The Smart Manufacturing Ecosystem Company</p>
 </footer>
 
 </body>
